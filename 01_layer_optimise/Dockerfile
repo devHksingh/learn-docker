@@ -3,9 +3,9 @@ FROM node:22.11
 WORKDIR /app
 
 COPY package* .
-COPY ./prisma .
-
 RUN npm install
+
+COPY ./prisma .
 RUN npx prisma generate
 
 COPY . .
